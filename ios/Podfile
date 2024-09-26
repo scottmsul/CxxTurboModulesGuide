@@ -39,6 +39,11 @@ target 'CxxTurboModulesGuide' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
+  # added manually SMS 2024-09-26
+  if ENV['RCT_NEW_ARCH_ENABLED'] == '1'
+    pod 'AppTurboModules', :path => "./../tm"
+  end
+
   target 'CxxTurboModulesGuideTests' do
     inherit! :complete
     # Pods for testing
